@@ -8,15 +8,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import  org.springframework.web.bind.annotation.RestController;
 
 import java.util.Map;
-@RestController
-@RequestMapping("/sign_in")
-public class signinController {
 
+@RestController
+@RequestMapping("/sign_up")
+public class signupController {
     @Autowired
     private UserService userService;
     @PostMapping
-    public Map<String, Object> sign_in(@RequestBody User user) {
+    public Map<String,Object> sign_up(@RequestBody User user) {
+        return userService.sign_up(user);
 
-        return userService.sign_in(user);
     }
 }
