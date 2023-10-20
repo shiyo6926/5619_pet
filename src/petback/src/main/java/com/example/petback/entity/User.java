@@ -1,15 +1,29 @@
 package com.example.petback.entity;
+
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+
 public class User
 {
-    private Integer userID;
+    @JsonProperty("userId")
+    private Integer userId;
     private String userName;
     private String password;
     private String pet;
     private String email;
     private String userType;
+    private int userState;
 
-    public Integer getUserID() {
-        return userID;
+    public int getUserState() {
+        return userState;
+    }
+
+    public void setUserState(int userState) {
+        this.userState = userState;
+    }
+
+    public Integer getUserId() {
+        return userId;
     }
 
     public String getUserName() {
@@ -52,8 +66,8 @@ public class User
         this.userType = userType;
     }
 
-    public void setUserID(Integer userID) {
-        this.userID = userID;
+    public void setUserId(Integer userId) {
+        this.userId = userId;
     }
     public boolean success(){
         return true;
