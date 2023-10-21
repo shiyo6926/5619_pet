@@ -41,7 +41,7 @@ public class UserService {
                     else
                         return response_reason("error");
                 }
-                //success}
+                //success
             else
                 return response_reason("email repeat");//email repeat
         }
@@ -78,19 +78,13 @@ public class UserService {
     }
     public int log_state_check(User user)
     {
-        //if (Objects.equals(user.getUserId(), "")||user.getUserId()==null)
-        //{
-        //    Map<String,Object> response =new HashMap<>();
-        //  response.put("userState",0);
-        //    return response;
-        //}
-        //else {
-            int log_state =userMapper.log_state_check(user);
-            //Map<String,Object> response =new HashMap<>();
-            //response.put("userState",log_state);
-            //return response;
-            return log_state;
-        //}
+        if (Objects.equals(user.getUserId(), "")||user.getUserId()==null)
+        {
+            return 0;
+        }
+        else {
+            return userMapper.log_state_check(user);
+        }
 
     }
     public Map<String,Object> get_userId_by_username(User user)

@@ -19,8 +19,6 @@ public class logStateCheckController {
     private UserService userService;
     @PostMapping
     public int log_state(@RequestBody User user) {
-        //System.out.println("I FIND");
-        //return userService.log_state_check(user);
-        return  (1);
+        return userService.log_state_check(user);
     }
 }
