@@ -6,16 +6,18 @@ public class PetProduct {
     private String productName;
     private String tag;
     private String productInformation;
+    private String reason;
 
     public PetProduct() {
     }
 
-    public PetProduct(int productId, int userId, String productName, String tag, String productInformation) {
+    public PetProduct(int productId, int userId, String productName, String tag, String productInformation, String reason) {
         this.productId = productId;
         this.userId = userId;
         this.productName = productName;
         this.tag = tag;
         this.productInformation = productInformation;
+        this.reason = reason;
     }
 
     public int getProductId() {
@@ -48,6 +50,14 @@ public class PetProduct {
 
     public void setTag(String tag) {
         this.tag = tag;
+    }
+
+    public String getReason() {
+        return reason;
+    }
+
+    public void setReason(String reason) {
+        this.reason = reason;
     }
 
     public String getProductInformation() {

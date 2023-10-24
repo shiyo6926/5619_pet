@@ -44,7 +44,6 @@ public class PetDiary {
     private String date;
     private int userId;
     private String value;
-
     private String reason;
 }
 

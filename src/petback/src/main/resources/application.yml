@@ -10,8 +10,4 @@ mybatis:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
 server:
   port: 9090
-<<<<<<< HEAD
-=======
 
-
->>>>>>> origin/zyq

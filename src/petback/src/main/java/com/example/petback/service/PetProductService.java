@@ -2,26 +2,34 @@ package com.example.petback.service;
 
 import com.example.petback.entity.PetProduct;
 import com.example.petback.mapper.PetProductMapper;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Service
 public class PetProductService {
-    private final PetProductMapper petProductMapper;
+    private  PetProductMapper petProductMapper;
 
-    @Autowired
-    public PetProductService(PetProductMapper petProductMapper) {
-        this.petProductMapper = petProductMapper;
-    }
-
-    public String createProduct(PetProduct product) {
-        int count = petProductMapper.countProductByName(product.getProductName());
-        if (count > 0) {
-            return "productName repeat";
-        } else {
-            petProductMapper.insertPetProduct(product);
-            return "success";
+    public List<PetProduct> getPetProductsBytag(PetProduct petProduct) {
+        // 检查参数是否为空
+        List<PetProduct> listbytag =new ArrayList<>();;
+        if (petProduct.getTag() == null || petProduct.getTag().isEmpty()) {
+            petProduct.setReason("Error: Tag is missing");
+            listbytag.add(petProduct);
+            return listbytag;
         }
+
+
+        // 调用 Mapper 获取数据
+        return petProductMapper.getPetProductsbytag(petProduct.getTag());
+    }
+    public List<PetProduct> getPetProducts() {
+        // 检查参数是否为空
+        List<PetProduct> list =new ArrayList<>();;
+
+        // 调用 Mapper 获取数据
+        return petProductMapper.getPetProducts();
     }
 }
 

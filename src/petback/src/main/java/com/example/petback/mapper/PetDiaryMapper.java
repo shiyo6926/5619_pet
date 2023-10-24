@@ -8,7 +8,7 @@ import java.util.List;
 @Mapper
 public interface PetDiaryMapper {
 
-    @Insert("INSERT INTO petdiary (date, petDiaryId, userId, value) VALUES (#{date}, #{petDiaryId}, #{userId}, #{value})")
+    @Insert("INSERT INTO petdiary (date, userId, value) VALUES (#{date}, #{userId}, #{value})")
     void addPetDiary(PetDiary petDiary);
     @Select("SELECT * FROM petdiary WHERE userId = #{userId} AND date=#{date} AND value = #{value}")
     List <PetDiary> getPetDiaryList(PetDiary petDiary);

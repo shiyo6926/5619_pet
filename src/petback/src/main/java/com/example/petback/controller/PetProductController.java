@@ -2,33 +2,25 @@ package com.example.petback.controller;
 
 import com.example.petback.entity.PetProduct;
 import com.example.petback.service.PetProductService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 @RestController
 public class PetProductController {
-    private final PetProductService petProductService;
+    private PetProductService petProductService;
 
-    @Autowired
-    public PetProductController(PetProductService petProductService) {
-        this.petProductService = petProductService;
+    public ResponseEntity<List<PetProduct>> getPetProductsBytag(@RequestBody PetProduct petProduct) {
+
+        List<PetProduct> petProductsBytag = petProductService.getPetProductsBytag(petProduct);
+        return ResponseEntity.ok(petProductsBytag);
     }
+    public ResponseEntity<List<PetProduct>> getPetProducts() {
 
-    @PostMapping("/products")
-    public String createProduct(@RequestBody PetProduct product) {
-        String result = petProductService.createProduct(product);
-        if (result.equals("success")) {
-            return "{\"productID\":\"" + product.getProductId() + "\", " +
-                    "\"reason\":\"success\"," +
-                    "\"userID\":\"" + product.getUserId() + "\", " +
-                    "\"productName\":\"" + product.getProductName() + "\", " +
-                    "\"pet\":\"" + product.getTag() + "\", " +
-                    "\"productInformation\":\"" + product.getProductInformation() + "\"}";
-        } else {
-            return "{\"create_product_success\":\"" + result + "\"}";
-        }
+        List<PetProduct> petProducts = petProductService.getPetProducts();
+        return ResponseEntity.ok(petProducts);
     }
 }
 
