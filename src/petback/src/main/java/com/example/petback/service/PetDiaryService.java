@@ -38,7 +38,6 @@ public class PetDiaryService {
         return getPetDiarylist.get(0);
     }
 
-    // 检查日期格式
 
 
     public PetDiary editPetDiary(PetDiary petDiary) {
@@ -111,7 +110,7 @@ public class PetDiaryService {
         return petDiaryMapper.getPetDiariesByUserId(userId);
     }
 
-    // 检查用户ID格式
+
 
 }
 
