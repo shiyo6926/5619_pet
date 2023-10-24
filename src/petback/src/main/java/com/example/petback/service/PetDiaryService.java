@@ -17,10 +17,6 @@ public class PetDiaryService {
 
     public PetDiary addPetDiary(PetDiary petDiary) {
         // 检查参数是否为空
-        if (petDiary.getDate() == null || petDiary.getDate().isEmpty()) {
-            petDiary.setReason("Error: Date is missing");
-            return petDiary;
-        }
 
         if (Objects.equals(petDiary.getUserId(),null) || Objects.equals(petDiary.getUserId(),"")) {
             petDiary.setReason("Error: UserId is missing");
@@ -42,10 +38,6 @@ public class PetDiaryService {
 
     public PetDiary editPetDiary(PetDiary petDiary) {
         // 检查参数是否为空
-        if (petDiary.getDate() == null || petDiary.getDate().isEmpty()) {
-            petDiary.setReason("Error: Date is missing");
-            return petDiary;
-        }
 
         if (Objects.equals(petDiary.getUserId(),null) || Objects.equals(petDiary.getUserId(),"")) {
             petDiary.setReason("Error: UserId is missing");
@@ -71,18 +63,9 @@ public class PetDiaryService {
 
     public PetDiary deletePetDiary(PetDiary petDiary) {
         // 检查参数是否为空
-        if (petDiary.getDate() == null || petDiary.getDate().isEmpty()) {
-            petDiary.setReason("Error: Date is missing");
-            return petDiary;
-        }
 
         if (Objects.equals(petDiary.getUserId(),null) || Objects.equals(petDiary.getUserId(),"")) {
             petDiary.setReason("Error: UserId is missing");
-            return petDiary;
-        }
-
-        if (petDiary.getValue() == null || petDiary.getValue().isEmpty()) {
-            petDiary.setReason("Error: Value is missing");
             return petDiary;
         }
 

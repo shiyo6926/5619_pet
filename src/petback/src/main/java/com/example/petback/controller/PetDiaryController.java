@@ -37,10 +37,10 @@ public class PetDiaryController {
         return response;
     }
 
-    @GetMapping("/get")
-    public ResponseEntity<List<PetDiary>> getPetDiariesByUserId(@RequestParam int userId) {
+    @PostMapping("/get")
+    public ResponseEntity<List<PetDiary>> getPetDiariesByUserId(@RequestBody PetDiary petdiary) {
 
-        List<PetDiary> petDiaries = petDiaryService.getPetDiariesByUserId(userId);
+        List<PetDiary> petDiaries = petDiaryService.getPetDiariesByUserId(petdiary.getUserId());
         return ResponseEntity.ok(petDiaries);
     }
 }
