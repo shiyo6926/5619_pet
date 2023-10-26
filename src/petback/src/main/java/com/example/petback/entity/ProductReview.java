@@ -5,19 +5,19 @@ public class ProductReview {
     private int userId;
     private int productId;
     private String reviewContent;
-    private double rating;
+    private String reason;
 
     // Constructors, getters, and setters
 
     public ProductReview() {
     }
 
-    public ProductReview(int reviewId, int userId, int productId, String reviewContent, double rating) {
+    public ProductReview(int reviewId, int userId, int productId, String reviewContent) {
         this.reviewId = reviewId;
         this.userId = userId;
         this.productId = productId;
         this.reviewContent = reviewContent;
-        this.rating = rating;
+        this.reason = reason;
     }
 
     public int getReviewId() {
@@ -52,11 +52,11 @@ public class ProductReview {
         this.reviewContent = reviewContent;
     }
 
-    public double getRating() {
-        return rating;
+    public String getReason() {
+        return reason;
     }
 
-    public void setRating(double rating) {
-        this.rating = rating;
+    public void setReason(String reason) {
+        this.reason = reason;
     }
 }
