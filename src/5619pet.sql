@@ -105,14 +105,13 @@ DROP TABLE IF EXISTS `petdiary`;
 CREATE TABLE `petdiary` (
   `petDiaryId` int unsigned NOT NULL AUTO_INCREMENT,
   `value` varchar(45) DEFAULT NULL,
-  `date` date DEFAULT NULL,
+  `date` varchar(45) DEFAULT NULL,
   `userId` int DEFAULT NULL,
   PRIMARY KEY (`petDiaryId`),
   UNIQUE KEY `petDiaryId_UNIQUE` (`petDiaryId`),
-  UNIQUE KEY `userId_UNIQUE` (`userId`),
   KEY `userId_idx` (`userId`),
   CONSTRAINT `userIdOfPetDiary` FOREIGN KEY (`userId`) REFERENCES `user` (`userId`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=8557 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -121,6 +120,7 @@ CREATE TABLE `petdiary` (
 
 LOCK TABLES `petdiary` WRITE;
 /*!40000 ALTER TABLE `petdiary` DISABLE KEYS */;
+INSERT INTO `petdiary` VALUES (1,'e','2023/10/26 00:00',456800),(3,'je','2023/10/26 00:00',1230),(5,'je','2023/10/26 00:00',1230),(6,'je','2023/10/26 00:00',1230),(7,'je','2023/10/26 00:00',1230),(8,'je555','2023/10/26 00:00',1230),(9,'je555','2023/10/26 00:00',1230),(10,'je456555','2023/10/26 00:00',1230),(325,'qqqqqq','2023/10/25 00:00',3790),(444,'wwww','20230405',3790),(748,'wohao','20230101',3790),(751,'151','2023/10/25 00:00',3790),(754,'666666','2023/10/26 00:00',3790),(8556,'88888888','2023/10/26 00:00',3790);
 /*!40000 ALTER TABLE `petdiary` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -141,7 +141,7 @@ CREATE TABLE `post` (
   UNIQUE KEY `postId_UNIQUE` (`postId`),
   KEY `userIdofPost_idx` (`userId`),
   CONSTRAINT `userIdofPost` FOREIGN KEY (`userId`) REFERENCES `user` (`userId`)
-) ENGINE=InnoDB AUTO_INCREMENT=1250 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=1252 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -150,7 +150,7 @@ CREATE TABLE `post` (
 
 LOCK TABLES `post` WRITE;
 /*!40000 ALTER TABLE `post` DISABLE KEYS */;
-INSERT INTO `post` VALUES (1249,456800,'dog is cute','my dog is very cute',NULL);
+INSERT INTO `post` VALUES (1249,456800,'dog is cute','my dog is very cute',NULL),(1250,456800,'dog is cute','my dog is very cute',NULL),(1251,456800,'dog is cute','my dog is very cute',NULL);
 /*!40000 ALTER TABLE `post` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -215,6 +215,37 @@ LOCK TABLES `productreview` WRITE;
 UNLOCK TABLES;
 
 --
+-- Table structure for table `reply`
+--
+
+DROP TABLE IF EXISTS `reply`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `reply` (
+  `replyId` int NOT NULL AUTO_INCREMENT,
+  `userId` int NOT NULL,
+  `postId` int NOT NULL,
+  `replyContent` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`replyId`),
+  UNIQUE KEY `replyId_UNIQUE` (`replyId`),
+  KEY `userIdOfReply_idx` (`userId`),
+  KEY `postIdOfReply_idx` (`postId`),
+  CONSTRAINT `postIdOfReply` FOREIGN KEY (`postId`) REFERENCES `post` (`postId`),
+  CONSTRAINT `userIdOfReply` FOREIGN KEY (`userId`) REFERENCES `user` (`userId`)
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `reply`
+--
+
+LOCK TABLES `reply` WRITE;
+/*!40000 ALTER TABLE `reply` DISABLE KEYS */;
+INSERT INTO `reply` VALUES (1,456800,1250,'sadfghj'),(9,456800,1250,'ohhhhhhhh'),(10,456800,1250,'ohhhhhhhh');
+/*!40000 ALTER TABLE `reply` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `user`
 --
 
@@ -255,4 +286,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-10-20 11:09:41
+-- Dump completed on 2023-10-26 18:32:06
