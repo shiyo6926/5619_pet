@@ -30,6 +30,7 @@ public class PetDiaryService {
 
         // 调用 Mapper 插入数据
         petDiaryMapper.addPetDiary(petDiary);
+        petDiary.setReason("successful");
         List <PetDiary> getPetDiarylist = petDiaryMapper.getPetDiaryList(petDiary);
         return getPetDiarylist.get(0);
     }

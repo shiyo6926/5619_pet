@@ -33,6 +33,7 @@ public class ProductReviewService {
 
         // 调用 Mapper 插入数据
         productReviewMapper.addProductReview(productReview);
+        productReview.setReason("successful");
         List<ProductReview> getProductReviewlist = productReviewMapper.getProductReviewList(productReview);
         return getProductReviewlist.get(0);
     }
