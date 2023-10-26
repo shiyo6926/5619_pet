@@ -1,23 +1,16 @@
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-<<<<<<< HEAD
     url: jdbc:mysql://47.94.109.63:3306/5619pet
     username: myuser
     password: 123456
 
-=======
-    url: jdbc:mysql://10.19.151.233/5619pet
-    username: myuser
-    password: 123456 #???????
->>>>>>> zyq
 mybatis:
   type-aliases-package: com.wjr.pojo
   configuration:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
 server:
   port: 9090
-<<<<<<< HEAD
 
 openweather:
   apiKey: aa824d0c376bd5aa1864229af7b27f56
@@ -27,5 +20,3 @@ logging:
   level:
     com.example.petback.controller: DEBUG
 
-=======
->>>>>>> zyq
