@@ -22,7 +22,7 @@ public class PostMapperImpl implements PostMapper {
 
     @Override
     public Post getPostById(Integer postId) {
-        String sql = "SELECT * FROM post WHERE postId = ?";
+        String sql = "SELECT * FROM post";
         return jdbcTemplate.queryForObject(sql, new Object[]{postId}, new BeanPropertyRowMapper<>(Post.class));
     }
 
@@ -38,9 +38,11 @@ public class PostMapperImpl implements PostMapper {
         jdbcTemplate.update(sql, post.getUserId(), post.getPostTitle(), post.getPostContent(), post.getPostImage(), post.getPostId());
     }
 
+
     @Override
-    public void deletePost(Integer postId) {
-        String sql = "DELETE FROM post WHERE postId = ?";
-        jdbcTemplate.update(sql, postId);
+    public void deletePost(Integer postId, Integer userId) {
+        String sql = "DELETE FROM post WHERE postId = ? AND userId = ?";
+        jdbcTemplate.update(sql, postId, userId);
     }
+
 }

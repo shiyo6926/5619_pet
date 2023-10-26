@@ -30,8 +30,8 @@ public class WeatherController {
     }
 
     @GetMapping("/weather")
-    public Mono<WeatherResponse> getWeather(@RequestParam String city) {
-
+    public Mono<WeatherResponse> getWeather() {
+        String city = "Sydney"; // 设置 city 为 "Sydney"
         String apiUrl = "/weather?q=" + city + "&appid=" + apiKey;
         Mono<String> apiResponse = webClient.get()
                 .uri(apiUrl)
@@ -44,6 +44,7 @@ public class WeatherController {
 
         return weatherResponse;
     }
+
 
     private WeatherResponse parseWeatherResponse(String response) {
         WeatherResponse weatherResponse = new WeatherResponse();

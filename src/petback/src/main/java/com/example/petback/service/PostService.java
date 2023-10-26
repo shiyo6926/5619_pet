@@ -32,7 +32,7 @@ public class PostService {
         postMapper.updatePost(post);
     }
 
-    public void deletePost(Integer postId) {
-        postMapper.deletePost(postId);
+    public void deletePost(Integer postId, Integer userId) {
+        postMapper.deletePost(postId,userId);
     }
 }

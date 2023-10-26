@@ -11,5 +11,5 @@ public interface PostMapper {
     Post getPostById(Integer postId);
     void createPost(Post post);
     void updatePost(Post post);
-    void deletePost(Integer postId);
+    void deletePost(Integer postId, Integer userId);
 }

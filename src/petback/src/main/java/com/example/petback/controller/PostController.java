@@ -18,7 +18,7 @@ public class PostController {
         this.postService = postService;
     }
 
-    @GetMapping("/")
+    @GetMapping("/postList")
     public ResponseEntity<List<Post>> getAllPosts() {
         List<Post> posts = postService.getAllPosts();
         return ResponseEntity.ok(posts);
@@ -35,15 +35,16 @@ public class PostController {
     }
 
 
-    @PostMapping("/")
+    @PostMapping("/createPost")
     public ResponseEntity<Void> createPost(@RequestBody Post post) {
         postService.createPost(post);
         return ResponseEntity.status(HttpStatus.CREATED).build();
     }
 
-    @DeleteMapping("/{postId}")
-    public ResponseEntity<Void> deletePost(@PathVariable int postId) {
-        postService.deletePost(postId);
+    @DeleteMapping("/deletePost/{postId}/{userId}")
+    public ResponseEntity<Void> deletePost(@PathVariable int postId, @PathVariable int userId) {
+        postService.deletePost(postId, userId);
         return ResponseEntity.noContent().build();
     }
+
 }
