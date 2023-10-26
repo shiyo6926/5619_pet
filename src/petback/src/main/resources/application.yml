@@ -1,13 +1,22 @@
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/5619pet
-    username: root
-    password: 123456 #???????
+    url: jdbc:mysql://47.94.109.63:3306/5619pet
+    username: myuser
+    password: 123456
+
 mybatis:
   type-aliases-package: com.wjr.pojo
   configuration:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
 server:
-  port:9090
+  port: 9090
+
+openweather:
+  apiKey: aa824d0c376bd5aa1864229af7b27f56
+  baseUrl: https://api.openweathermap.org/data/2.5
+
+logging:
+  level:
+    com.example.petback.controller: DEBUG
 
