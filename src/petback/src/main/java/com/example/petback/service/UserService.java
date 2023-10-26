@@ -41,7 +41,7 @@ public class UserService {
                     else
                         return response_reason("error");
                 }
-                //success}
+                //success
             else
                 return response_reason("email repeat");//email repeat
         }
@@ -56,10 +56,14 @@ public class UserService {
             List<User> user_email=userMapper.sign_in_by_email(user);
             if (user_username.size()==1)
             {
+                user_username.get(0).setUserState(1);
+                userMapper.log_state_update(user_username.get(0));
                 return getStringObjectMap(user_username);
             }
             else if(userMapper.sign_in_by_email(user).size()==1)
             {
+                user_username.get(0).setUserState(1);
+                userMapper.log_state_update(user_email.get(0));
                 return getStringObjectMap(user_email);
             }
             else
@@ -72,16 +76,52 @@ public class UserService {
             return response_reason("username or email does not exist");
         }
     }
+    public int log_state_check(User user)
+    {
+        if (Objects.equals(user.getUserId(), "")||user.getUserId()==null)
+        {
+            return 0;
+        }
+        else {
+            return userMapper.log_state_check(user);
+        }
 
+    }
+    public Map<String,Object> get_userId_by_username(User user)
+    {
+        List<User> User_info=userMapper.get_userinfo_by_username(user);
+        if(User_info.size()==1)
+        {
+            Map<String,Object> response =new HashMap<>();
+            response.put("userId",User_info.get(0).getUserId());
+            response.put("reason","success");
+            return response;
+        }
+        else
+        {
+            return response_reason("Cannot find the username");
+        }
+
+    }
+    public Map<String,Object>log_out_state_update(User user)
+    {
+        user.setUserState(0);
+        int res = userMapper.log_state_update(user);
+        if (res==1)
+            return response_reason("success");
+        else
+            return response_reason(("error"));
+    }
     private Map<String, Object> getStringObjectMap(List<User> user_username) {
         String reason = "success";
         Map<String, Object> response = new HashMap<>();
-        response.put("userID", user_username.get(0).getUserID());
+        response.put("userId", user_username.get(0).getUserId());
         response.put("userName", user_username.get(0).getUserName());
         response.put("password", user_username.get(0).getPassword());
         response.put("pet", user_username.get(0).getPet());
         response.put("email", user_username.get(0).getEmail());
         response.put("userType", user_username.get(0).getUserType());
+        response.put("userState",user_username.get(0).getUserState());
         response.put("reason", reason);
         return response;
     }
@@ -92,8 +132,5 @@ public class UserService {
         return response;
     }
 
-    public String find_password(User user)
-    {
-        return "success";
-    }
+
 }
