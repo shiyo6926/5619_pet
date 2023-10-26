@@ -8,10 +8,10 @@ import java.util.List;
 
 @Mapper
 public interface PetProductMapper {
-    @Select("SELECT * FROM petproduct")
+    @Select("SELECT * FROM product")
     List<PetProduct> getPetProducts();
 
-    @Select("SELECT COUNT(*) FROM petproduct WHERE tag = #{tag}")
-    List<PetProduct> getPetProductsbytag(String tag);
+    @Select("SELECT * FROM product WHERE pet = #{pet}")
+    List<PetProduct> getPetProductsbypet(String pet);
 }
 

@@ -2,6 +2,7 @@ package com.example.petback.service;
 
 import com.example.petback.entity.ProductReview;
 import com.example.petback.mapper.ProductReviewMapper;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -10,6 +11,7 @@ import java.util.Objects;
 
 @Service
 public class ProductReviewService {
+    @Autowired
     private ProductReviewMapper productReviewMapper;
 
     public ProductReview addProductReview(ProductReview productReview) {
