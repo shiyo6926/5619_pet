@@ -50,7 +50,7 @@ public class PetDiaryService {
         }
 
         if (Objects.equals(petDiary.getPetDiaryId(),null) || Objects.equals(petDiary.getPetDiaryId(),"")) {
-            petDiary.setReason("Error: UserId is missing");
+            petDiary.setReason("Error: PetDiaryId is missing");
             return petDiary;
         }
 
@@ -68,9 +68,8 @@ public class PetDiaryService {
             petDiary.setReason("Error: UserId is missing");
             return petDiary;
         }
-
         if (Objects.equals(petDiary.getPetDiaryId(),null) || Objects.equals(petDiary.getPetDiaryId(),"")) {
-            petDiary.setReason("Error: UserId is missing");
+            petDiary.setReason("Error: PetDiaryId is missing");
             return petDiary;
         }
 
