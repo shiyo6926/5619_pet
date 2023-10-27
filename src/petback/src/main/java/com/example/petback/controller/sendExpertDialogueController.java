@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
 import java.util.Map;
 
 @RestController
@@ -17,7 +18,7 @@ public class sendExpertDialogueController {
     @Autowired
     private ExpertDialogueService expertDialogueService;
     @PostMapping
-    public Map<Integer, ExpertDialogue> send(@RequestBody ExpertDialogue expertDialogue) {
+    public List<ExpertDialogue> send(@RequestBody ExpertDialogue expertDialogue) {
 
         return expertDialogueService.senddialogue(expertDialogue);
     }

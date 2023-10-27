@@ -9,8 +9,8 @@ import java.util.List;
 
 @Mapper
 public interface ExpertDialogueMapper {
-    @Insert("INSERT INTO expertDialogue(userId,expertId,info) VALUES (#{userId},#{expertId},#{info})")
+    @Insert("INSERT INTO expertdialogue(userId,expertId,info) VALUES (#{userId},#{expertId},#{info})")
     int receive(ExpertDialogue expertDialogue);
-    @Select("SELECT * FROM expertDialogue where expertId=#{expertId}")
+    @Select("SELECT * FROM expertdialogue where expertId=#{expertId}")
     List<ExpertDialogue> send(ExpertDialogue expertDialogue);
 }

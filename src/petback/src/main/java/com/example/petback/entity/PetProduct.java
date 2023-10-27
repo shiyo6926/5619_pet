@@ -4,18 +4,20 @@ public class PetProduct {
     private int productId;
     private int userId;
     private String productName;
-    private String tag;
+    private String pet;
     private String productInformation;
+    private String reason;
 
     public PetProduct() {
     }
 
-    public PetProduct(int productId, int userId, String productName, String tag, String productInformation) {
+    public PetProduct(int productId, int userId, String productName, String pet, String productInformation, String reason) {
         this.productId = productId;
         this.userId = userId;
         this.productName = productName;
-        this.tag = tag;
+        this.pet = pet;
         this.productInformation = productInformation;
+        this.reason = reason;
     }
 
     public int getProductId() {
@@ -42,12 +44,20 @@ public class PetProduct {
         this.productName = productName;
     }
 
-    public String getTag() {
-        return tag;
+    public String getPet() {
+        return pet;
     }
 
-    public void setTag(String tag) {
-        this.tag = tag;
+    public void setPet(String pet) {
+        this.pet = pet;
+    }
+
+    public String getReason() {
+        return reason;
+    }
+
+    public void setReason(String reason) {
+        this.reason = reason;
     }
 
     public String getProductInformation() {

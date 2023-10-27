@@ -3,32 +3,30 @@ package com.example.petback.controller;
 import com.example.petback.entity.PetProduct;
 import com.example.petback.service.PetProductService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 @RestController
+@RequestMapping("/petproduct")
 public class PetProductController {
-    private final PetProductService petProductService;
-
     @Autowired
-    public PetProductController(PetProductService petProductService) {
-        this.petProductService = petProductService;
-    }
+    private PetProductService petProductService;
+    @PostMapping("/searchbypet")
+    public ResponseEntity<List<PetProduct>> getPetProductsBypet(@RequestBody PetProduct petProduct) {
 
-    @PostMapping("/products")
-    public String createProduct(@RequestBody PetProduct product) {
-        String result = petProductService.createProduct(product);
-        if (result.equals("success")) {
-            return "{\"productID\":\"" + product.getProductId() + "\", " +
-                    "\"reason\":\"success\"," +
-                    "\"userID\":\"" + product.getUserId() + "\", " +
-                    "\"productName\":\"" + product.getProductName() + "\", " +
-                    "\"pet\":\"" + product.getTag() + "\", " +
-                    "\"productInformation\":\"" + product.getProductInformation() + "\"}";
-        } else {
-            return "{\"create_product_success\":\"" + result + "\"}";
-        }
+        List<PetProduct> petProductsBypet = petProductService.getPetProductsBypet(petProduct);
+        return ResponseEntity.ok(petProductsBypet);
+    }
+    @PostMapping("/search")
+    public ResponseEntity<List<PetProduct>> getPetProducts() {
+
+        List<PetProduct> petProducts = petProductService.getPetProducts();
+        return ResponseEntity.ok(petProducts);
     }
 }
 

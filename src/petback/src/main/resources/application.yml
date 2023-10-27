@@ -1,9 +1,10 @@
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://47.94.109.63:3306/5619pet
+    url: jdbc:mysql://47.94.109.63/5619pet
     username: myuser
-    password: 123456
+    password: 123456 #???????
+
 
 mybatis:
   type-aliases-package: com.wjr.pojo
@@ -19,4 +20,3 @@ openweather:
 logging:
   level:
     com.example.petback.controller: DEBUG
-

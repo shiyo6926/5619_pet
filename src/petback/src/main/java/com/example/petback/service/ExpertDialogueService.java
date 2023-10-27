@@ -34,14 +34,11 @@ public class ExpertDialogueService {
         else
             return response_reason("error");
     }
-    public Map<Integer, ExpertDialogue> senddialogue(ExpertDialogue expertDialogue)
+    public List<ExpertDialogue> senddialogue(ExpertDialogue expertDialogue)
     {
         List<ExpertDialogue> expertdialoguelist=expertDialogueMapper.send(expertDialogue);
-        Map<Integer, ExpertDialogue> ExpertDialogueMap = new HashMap<>();
-        for (ExpertDialogue ed : expertdialoguelist) {
-            ExpertDialogueMap.put(ed.getUserId(), ed);
-        }
-        return ExpertDialogueMap;
+
+        return expertdialoguelist;
     }
 
     private Map<String,Object>response_reason(String reason)
