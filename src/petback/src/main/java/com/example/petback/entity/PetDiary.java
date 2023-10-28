@@ -1,6 +1,18 @@
 package com.example.petback.entity;
 
 public class PetDiary {
+    public PetDiary() {
+    }
+
+    public PetDiary(int petDiaryId, int userId, String date, String value, String reason) {
+        this.petDiaryId = petDiaryId;
+        this.userId = userId;
+        this.value = value;
+        this.date = date;
+        this.petDiaryId = petDiaryId;
+        this.reason = reason;
+    }
+
     public int getPetDiaryId() {
         return petDiaryId;
     }
