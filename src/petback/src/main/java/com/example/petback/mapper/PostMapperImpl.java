@@ -20,6 +20,7 @@ public class PostMapperImpl implements PostMapper {
     @Override
     public List<Post> getAllPosts() {
         String sql = "SELECT * FROM post";
+        System.out.println("cnm");
         return jdbcTemplate.query(sql, new BeanPropertyRowMapper<>(Post.class));
     }
 
@@ -31,14 +32,14 @@ public class PostMapperImpl implements PostMapper {
 
     @Override
     public void createPost(Post post) {
-        String sql = "INSERT INTO post (userName, userId, postTitle, postContent, postImage, date) VALUES (?, ?, ?, ?, ?, ?)";
-        jdbcTemplate.update(sql, post.getUserName(), post.getUserId(), post.getPostTitle(), post.getPostContent(), post.getPostImage(), post.getDate());
+        String sql = "INSERT INTO post (userName, userId, postTitle, postContent, postImage, postDate) VALUES (?, ?, ?, ?, ?, ?)";
+        jdbcTemplate.update(sql, post.getUserName(), post.getUserId(), post.getPostTitle(), post.getPostContent(), post.getPostImage(), post.getPostDate());
     }
 
     @Override
     public void updatePost(Post post) {
-        String sql = "UPDATE post SET userName = ?, userId = ?, postTitle = ?, postContent = ?, postImage = ?, date = ? WHERE postId = ?";
-        jdbcTemplate.update(sql, post.getUserName(), post.getUserId(), post.getPostTitle(), post.getPostContent(), post.getPostImage(), post.getDate(), post.getPostId());
+        String sql = "UPDATE post SET userName = ?, userId = ?, postTitle = ?, postContent = ?, postImage = ?, postDate = ? WHERE postId = ?";
+        jdbcTemplate.update(sql, post.getUserName(), post.getUserId(), post.getPostTitle(), post.getPostContent(), post.getPostImage(), post.getPostDate(), post.getPostId());
     }
 
     @Override

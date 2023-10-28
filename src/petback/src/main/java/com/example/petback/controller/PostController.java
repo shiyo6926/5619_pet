@@ -21,6 +21,8 @@ public class PostController {
     @GetMapping("/getAllPosts")
     public ResponseEntity<List<Post>> getAllPosts() {
         List<Post> posts = postMapper.getAllPosts();
+        System.out.println("there date"+posts.get(0).getPostDate());
+        posts.get(0).getPostDate();
         return ResponseEntity.ok(posts);
     }
 
