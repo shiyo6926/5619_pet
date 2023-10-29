@@ -48,7 +48,7 @@ public class PostController {
         postMapper.updatePost(post);
         return ResponseEntity.ok(post);
     }
-    @DeleteMapping("/deletePost")
+    @PostMapping("/deletePost")
     public ResponseEntity<Void> deletePost(@RequestBody Map<String, Object> requestBody) {
         Integer postId = (Integer) requestBody.get("postId");
         Integer userId = (Integer) requestBody.get("userId");

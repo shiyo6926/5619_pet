@@ -94,7 +94,8 @@ See the section about [running tests](https://facebook.github.io/create-react-ap
 
 ## demo
 
-```TODO```
+The page be like:
+![Page](.doc/1.png)
 
 ## Project Enhancement
 
