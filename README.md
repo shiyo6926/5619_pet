@@ -27,73 +27,85 @@ Project structure:
 - `5619_pet/`
   - `README.md`
   - `src/`
-    -`petback/`
-        -`src/`
-            - `main/`
-                - `java/com/example/petback/`
-                    -`config/`
-                    -`controller/`
-                    -`entity/`
-                    -`mapper/`
-                    -`service/`
-                    -`PetbackApplication.java`
-                - `resources/application.yml`
-            - `test/java/com/example/petback/`
-                - `service/`
-                - `PetbackApplicationTests.java`
-        -`target/`
-        -`pom.xml`
-        -`HELP.md`
-        -`mvnw`
-        -`mvnw.cmd`
-    -`5619pet.sql`
-    -`PetConnect`
-        -`src/`
-            -`components/`
-            -`pages/`
-                -`Home/`
-                -`Signin/`
-                -`Signup/`
-            -`router`
-            -`utils`
-        -`build/`
-        -`public/`
-        -`package.json`
-        -`package-lock.json`
-        -`yarn.lock`
+    - `petback/`
+      - `src/`
+        - `main/`
+          - `java/com/example/petback/`
+            - `config/`
+            - `controller/`
+            - `entity/`
+            - `mapper/`
+            - `service/`
+            - `PetbackApplication.java`
+          - `resources/application.yml`
+          - `test/java/com/example/petback/`
+            - `service/`
+            - `PetbackApplicationTests.java`
+      - `target/`
+      - `pom.xml`
+      - `HELP.md`
+      - `mvnw`
+      - `mvnw.cmd`
+    - `5619pet.sql`
+    - `PetConnect`
+      - `src/`
+        - `components/`
+        - `pages/`
+          - `Home/`
+          - `Signin/`
+          - `Signup/`
+        - `router`
+        - `utils`
+        - `App.js`
+      - `build/`
+      - `public/`
+      - `package.json`
+      - `package-lock.json`
+      - `yarn.lock`
   - `doc/`
-  
-## 快速入门
 
-```TODO,请输入前端路径，前端端口```
+You can view the database format and data by importing the [`.src/5619pet.sql`](.src/5619pet.sql) file.
+
+## Quick start
+
 Backend:
 
 To get started, open your IDE and navigate to the [`.src/petback`](./src/petback) folder. Then, run the [`.src/main/java/com/example/petback/PetbackApplication.java`](./src/main/java/com/example/petback/PetbackApplication.java) file. The default backend IP is `localhost`, and the port is `9090`. You can perform testing on this port.
 
 Frontend:
 
-在.src/PetConnect文件夹开命令行输入:
+Open the command line in the [`.src/PetConnect`](.src/PetConnect) folder by entering:\
 yarn\
 npm start\
-Runs the app in the development mode.Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-即可看到注册页面，注册用户，之后进行登录，即可看到个人主界面，主界面中包含```TODO```。
+Runs the app in the development mode.Open [http://localhost:3000](http://localhost:3000) to view it in your browser.\
+You can see the registration page, register as a user, and then log in to access the personal main interface. The main interface includes Logout Function, AI Pet Assistant, Real-time Weather Display, Pet Diaries, Community Communication, Event Calendar, Notification Functionality, Adoption Information, Animal Rescue, Rescue Suggestion Reading, Article Search.\
 The page will reload when you make changes.You may also see any lint errors in the console.
 
-## 贡献
+## Test
 
-项目并未完善前端的部分功能，包括专家咨询、通知和宠物产品部分。您可以对此继续完善。\
-此外，
+Backend:
 
-## 测试
+To run tests, open your IDE and navigate to the [`.src/petback`](./src/petback) folder.Then, run the files under [`.src/test/java/com/example/petback/`](./src/test/java/com/example/petback/)for testing.
 
-如果适用，提供有关如何运行项目测试的信息。
+Frontend:
 
-## 演示或截图
+Open the command line in the [`.src/PetConnect`](.src/PetConnect) folder by entering:\
+npm test\
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-如果适用，提供演示或项目的截图，以便用户可以更好地了解项目的外观和功能。
+## demo
+
+```TODO```
+
+## Project Enhancement
+
+The project's frontend is not yet complete in certain areas, including expert consultation, notifications, and the pet products section. You have the opportunity to further enhance these features.
+
+Additionally, you can enrich the website's content by adding other functionalities, such as real-time communication with experts, expanding pet information (e.g., adding pet gender and names), and making the notification functionality interact with more events.
 
 ## Author information and contact information
 
-Front end:Qinyan Zhong
-Back end: Junqi Su, Jie Yang, Yaqi Zhou
+Front end:Qinyan Zhong\
+Back end: Junqi Su, Jie Yang, Yaqi Zhou\
 If you have any questions, please contact Yaqi Zhou with: <yzho0829@uni.sydney.edu.au>
