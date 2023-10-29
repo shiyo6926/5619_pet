@@ -1,0 +1,24 @@
+.container-fluid{
+    background-color: #FFA1E5;
+}
+
+.icon-container {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .hover-box {
+    position: absolute;
+    top: 40px; /* 调整盒子的垂直位置 */
+    right: -160px; /* 调整盒子的水平位置 */
+    transform: translateX(-50%);
+    background-color: #fff; /* 框的背景颜色 */
+    width: 300px; 
+    height: auto; 
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: inline-block;
+    z-index: 999;
+  }
