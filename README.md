@@ -1,28 +1,88 @@
 # 5619 PET
 
-## 项目简介
+## Project profile
 
-这是一个宠物相关的网站，它包含了```TODO```
+This is a website related to pets, and it includes features such as Login Function, Account Creation, Logout Function, AI Pet Assistant, Real-time Weather Display, Pet Diaries, Community Communication, Event Calendar, Notification Functionality, Adoption Information, Animal Rescue, Rescue Suggestion Reading, Article Search.
 
-## 项目结构
+This project aims to:
 
-项目依赖于前端react框架和后端基于JDK17的springboot3.0框架，后端所需的Maven依赖项见于./src/petback/pom.xml文件
+- **Provide a comprehensive pet information platform** to enhance the quality of life for pets.
 
-项目结构:
-```TODO```
+- **Promote pet rescue and adoption**, encouraging individuals to support pet rescue efforts.
 
+- **Connect pet lovers with experts**, foster an active community, and promote pet love and responsibility.
+
+The target audience for this project includes pet owners.
+
+## Project structure
+
+The front end of this project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+This backend is built on the [Spring Boot 3.0](https://spring.io/projects/spring-boot) framework with [JDK 17](https://openjdk.java.net/projects/jdk/17/).
+
+The necessary Maven dependencies for the backend can be found in the [./src/petback/pom.xml](./src/petback/pom.xml) file.
+
+Project structure:
+
+- `5619_pet/`
+  - `README.md`
+  - `src/`
+    -`petback/`
+        -`src/`
+            - `main/`
+                - `java/com/example/petback/`
+                    -`config/`
+                    -`controller/`
+                    -`entity/`
+                    -`mapper/`
+                    -`service/`
+                    -`PetbackApplication.java`
+                - `resources/application.yml`
+            - `test/java/com/example/petback/`
+                - `service/`
+                - `PetbackApplicationTests.java`
+        -`target/`
+        -`pom.xml`
+        -`HELP.md`
+        -`mvnw`
+        -`mvnw.cmd`
+    -`5619pet.sql`
+    -`PetConnect`
+        -`src/`
+            -`components/`
+            -`pages/`
+                -`Home/`
+                -`Signin/`
+                -`Signup/`
+            -`router`
+            -`utils`
+        -`build/`
+        -`public/`
+        -`package.json`
+        -`package-lock.json`
+        -`yarn.lock`
+  - `doc/`
+  
 ## 快速入门
 
 ```TODO,请输入前端路径，前端端口```
-使用你的IDE打开.src/petback文件夹，运行.src/main/java/com/example/petback/PetbackApplication.java文件，默认的后端IP为：localhost，端口为9090，您可以在此端口上进行测试。
-在.src/```TODO```文件夹开命令行输入:
-yarn
-npm start
-来运行前端，默认的前端IP为localhost,端口为：3000，请使用任意浏览器进入localhost/```TODO```网址，即可看到注册页面，注册用户，之后进行登录，即可看到个人主界面，主界面中包含```TODO```。
+Backend:
+
+To get started, open your IDE and navigate to the [`.src/petback`](./src/petback) folder. Then, run the [`.src/main/java/com/example/petback/PetbackApplication.java`](./src/main/java/com/example/petback/PetbackApplication.java) file. The default backend IP is `localhost`, and the port is `9090`. You can perform testing on this port.
+
+Frontend:
+
+在.src/PetConnect文件夹开命令行输入:
+yarn\
+npm start\
+Runs the app in the development mode.Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+即可看到注册页面，注册用户，之后进行登录，即可看到个人主界面，主界面中包含```TODO```。
+The page will reload when you make changes.You may also see any lint errors in the console.
 
 ## 贡献
 
-如果你希望其他人为你的项目做出贡献，提供一些关于如何进行贡献的说明。
+项目并未完善前端的部分功能，包括专家咨询、通知和宠物产品部分。您可以对此继续完善。\
+此外，
 
 ## 测试
 
