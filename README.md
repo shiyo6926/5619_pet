@@ -16,10 +16,8 @@ The target audience for this project includes pet owners.
 
 ## Project structure
 
-The front end of this project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-This backend is built on the [Spring Boot 3.0](https://spring.io/projects/spring-boot) framework with [JDK 17](https://openjdk.java.net/projects/jdk/17/).
-
+The front end of this project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).\
+This backend is built on the [Spring Boot 3.0](https://spring.io/projects/spring-boot) framework with [JDK 17](https://openjdk.java.net/projects/jdk/17/).\
 The necessary Maven dependencies for the backend can be found in the [./src/petback/pom.xml](./src/petback/pom.xml) file.
 
 Project structure:
@@ -68,29 +66,29 @@ You can view the database format and data by importing the [`.src/5619pet.sql`](
 
 ## Quick start
 
-Backend:
+### Backend
 
 To get started, open your IDE and navigate to the [`.src/petback`](./src/petback) folder. Then, run the [`.src/main/java/com/example/petback/PetbackApplication.java`](./src/main/java/com/example/petback/PetbackApplication.java) file. The default backend IP is `localhost`, and the port is `9090`. You can perform testing on this port.
 
-Frontend:
+### Frontend
 
 Open the command line in the [`.src/PetConnect`](.src/PetConnect) folder by entering:\
-yarn\
-npm start\
+`yarn`\
+`npm start`\
 Runs the app in the development mode.Open [http://localhost:3000](http://localhost:3000) to view it in your browser.\
 You can see the registration page, register as a user, and then log in to access the personal main interface. The main interface includes Logout Function, AI Pet Assistant, Real-time Weather Display, Pet Diaries, Community Communication, Event Calendar, Notification Functionality, Adoption Information, Animal Rescue, Rescue Suggestion Reading, Article Search.\
 The page will reload when you make changes.You may also see any lint errors in the console.
 
 ## Test
 
-Backend:
+### Backend of Test
 
 To run tests, open your IDE and navigate to the [`.src/petback`](./src/petback) folder.Then, run the files under [`.src/test/java/com/example/petback/`](./src/test/java/com/example/petback/)for testing.
 
-Frontend:
+### Frontend of Test
 
 Open the command line in the [`.src/PetConnect`](.src/PetConnect) folder by entering:\
-npm test\
+`npm test`\
 Launches the test runner in the interactive watch mode.\
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
