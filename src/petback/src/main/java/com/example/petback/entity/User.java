@@ -8,12 +8,21 @@ public class User
     @JsonProperty("userId")
     private Integer userId;
     private String userName;
+
     private String password;
     private String pet;
     private String email;
     private String userType;
     private int userState;
-
+    public User(Integer userId, String userName, String password, String pet, String email, String userType, int userState) {
+        this.userId = userId;
+        this.userName = userName;
+        this.password = password;
+        this.pet = pet;
+        this.email = email;
+        this.userType = userType;
+        this.userState = userState;
+    }
     public int getUserState() {
         return userState;
     }

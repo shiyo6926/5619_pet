@@ -3,6 +3,14 @@ package com.example.petback.entity;
 public class ExpertDialogue {
     private Integer expertDialogueId;
     private Integer userId;
+
+    public ExpertDialogue(Integer expertDialogueId, Integer userId, Integer expertId, String info) {
+        this.expertDialogueId = expertDialogueId;
+        this.userId = userId;
+        this.expertId = expertId;
+        this.info = info;
+    }
+
     private Integer expertId;
     private String info;
 

@@ -29,5 +29,7 @@ public interface UserMapper {
     int log_state_check(User user);
     @Update("UPDATE user SET userState = #{userState}  WHERE userId = #{userId}")
     int log_state_update(User user);
+    @Select("SELECT COUNT(*) from user where userId =#{userId}")
+    int check_userId(User user);
 
 }

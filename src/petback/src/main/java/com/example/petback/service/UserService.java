@@ -24,7 +24,7 @@ public class UserService {
         if (Objects.equals(user.getUserType(), ""))
             return response_reason("UserType cannot be empty");
         if (user.getUserName()==null)
-            return response_reason("No transfer user name");
+            return response_reason("No transfer userName");
         if (user.getPassword()==null)
             return response_reason("No transfer password");
         if (user.getEmail()==null)
@@ -82,7 +82,12 @@ public class UserService {
         {
             return 0;
         }
-        else {
+        else if(userMapper.check_userId(user)==0)
+        {
+            return 0;
+        }
+        else
+        {
             return userMapper.log_state_check(user);
         }
 
