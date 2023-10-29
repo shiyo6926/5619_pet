@@ -62,17 +62,17 @@ Project structure:
       - `yarn.lock`
   - `doc/`
 
-You can view the database format and data by importing the [`.src/5619pet.sql`](.src/5619pet.sql) file.
+You can view the database format and data by importing the [`./src/5619pet.sql`](./src/5619pet.sql) file.
 
 ## Quick start
 
 ### Backend
 
-To get started, open your IDE and navigate to the [`.src/petback`](./src/petback) folder. Then, run the [`.src/main/java/com/example/petback/PetbackApplication.java`](./src/main/java/com/example/petback/PetbackApplication.java) file. The default backend IP is `localhost`, and the port is `9090`. You can perform testing on this port.
+To get started, open your IDE and navigate to the [`./src/petback`](./src/petback) folder. Then, run the [`./src/petback/src/main/java/com/example/petback/PetbackApplication.java`](./src/petback/src/main/java/com/example/petback/PetbackApplication.java) file. The default backend IP is `localhost`, and the port is `9090`. You can perform testing on this port.
 
 ### Frontend
 
-Open the command line in the [`.src/PetConnect`](.src/PetConnect) folder by entering:\
+Open the command line in the [`./src/PetConnect`](./src/PetConnect) folder by entering:\
 `yarn`\
 `npm start`\
 Runs the app in the development mode.Open [http://localhost:3000](http://localhost:3000) to view it in your browser.\
@@ -83,11 +83,11 @@ The page will reload when you make changes.You may also see any lint errors in t
 
 ### Backend of Test
 
-To run tests, open your IDE and navigate to the [`.src/petback`](./src/petback) folder.Then, run the files under [`.src/test/java/com/example/petback/`](./src/test/java/com/example/petback/)for testing.
+To run tests, open your IDE and navigate to the [`.src/petback`](./src/petback) folder.Then, run the files under [`./src/petback/src/test/java/com/example/petback/`](./src/petback/src/test/java/com/example/petback/)for testing.
 
 ### Frontend of Test
 
-Open the command line in the [`.src/PetConnect`](.src/PetConnect) folder by entering:\
+Open the command line in the [`./src/PetConnect`](./src/PetConnect) folder by entering:\
 `npm test`\
 Launches the test runner in the interactive watch mode.\
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
@@ -95,7 +95,7 @@ See the section about [running tests](https://facebook.github.io/create-react-ap
 ## demo
 
 The page be like:
-![Page](.doc/1.png)
+![Page](./doc/1.png)
 
 ## Project Enhancement
 
